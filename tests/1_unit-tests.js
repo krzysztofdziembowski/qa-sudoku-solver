@@ -36,7 +36,7 @@ suite('Unit Tests', () => {
     })
     test("Logic handles an invalid row placement", () => {
         solver = new Solver();
-        let result = solver.checkRowPlacement(validString, "A", 2, 1)
+        let result = solver.checkRowPlacement(validString, "A", 1, 1)
         assert.equal(result.valid, false);
         assert.include(result.conflict, 'row');
     })
@@ -58,7 +58,7 @@ suite('Unit Tests', () => {
     })
     test("Logic handles an invalid region (3x3 grid) placement", () => {
         solver = new Solver();
-        let result = solver.checkRegionPlacement(validString, "A", 5, 4)
+        let result = solver.checkRegionPlacement(validString, "B", 3, 2)
         assert.equal(result.valid, false);
         assert.include(result.conflict, 'region');
     })
